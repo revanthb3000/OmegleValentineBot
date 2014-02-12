@@ -60,5 +60,5 @@ public class ConstantTextStrings {
 	/**
 	 * The rare case. All jokes have been exhausted.
 	 */
-	public static final String BOT_JOKES_EXHAUSTED = "All jokes exhausted ! Well done, human !! Hit \"stop\" to get me to stop.";
+	public static final String BOT_JOKES_EXHAUSTED = "All quotes exhausted ! Well done, human !! Hit \"stop\" to get me to stop.";
 }
