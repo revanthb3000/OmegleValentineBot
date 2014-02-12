@@ -77,9 +77,9 @@ public class ValentineBot {
 		Boolean shouldRestart = false;
 		String chatTranscript = "", newMessages = "";
 
-		chatTranscript = webHandler.getTranscript();
 		webHandler.sendMessage(ConstantTextStrings.BOT_GOODBYE);
-		webHandler.sendMessage(ConstantTextStrings.BOT_RESTART_INSTRUCTIONS);		
+		webHandler.sendMessage(ConstantTextStrings.BOT_RESTART_INSTRUCTIONS);
+		chatTranscript = webHandler.getTranscript();
 
 		if (isOwnerPresent) {
 			UtilityFunctions.playSound();
