@@ -35,18 +35,8 @@ public class ConstantTextStrings {
 	/**
 	 * The goodbye message when I'm around and spying.
 	 */
-	public static final String BOT_GOODBYE_OWNER_PRESENT = "Before I leave, I have one thing to ask : Will you be my valentine ? :D\nIf you're already taken (wonder who the lucky person is), I hope it works out for you ! (But I'm still cooler ! :D :D)\n Happy Valentines day !! :) ";
-	
-	/**
-	 * The goodbye message when I'm not around.
-	 */
-	public static final String BOT_GOODBYE_OWNER_NOT_PRESENT = "Before I leave, I have one thing to ask : Will you be my valentine ? :D\nIf you're already taken (wonder who the lucky person is), I hope it works out for you ! (But I'm still cooler ! :D :D)\n I will have to disconnect in about 240 seconds. \nHappy Valentines day !! :)";
-	
-	/**
-	 * Technical Info about the bot !
-	 */
-	public static final String BOT_TECH_STUFF = "(Technical Info: The bot was written in Java and Selenium was used to control the web browser. Source code's on GitHub)";
-	
+	public static final String BOT_GOODBYE = "Before I leave, I have one thing to ask : Will you be my valentine ? :D\nIf you're already taken (wonder who the lucky person is), I hope it works out for you ! (But I'm still cooler ! :D :D)\n Happy Valentines day !! :) Bye !";
+		
 	/**
 	 * Tells the user how to restart the bot.
 	 */

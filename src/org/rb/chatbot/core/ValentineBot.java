@@ -75,15 +75,16 @@ public class ValentineBot {
 	public static Boolean stopValentineBot(WebHandler webHandler,
 			Boolean isOwnerPresent) throws InterruptedException {
 		Boolean shouldRestart = false;
-		String chatTranscript = "";
+		String chatTranscript = "", newMessages = "";
+
+		chatTranscript = webHandler.getTranscript();
+		webHandler.sendMessage(ConstantTextStrings.BOT_GOODBYE);
+		webHandler.sendMessage(ConstantTextStrings.BOT_RESTART_INSTRUCTIONS);		
+
 		if (isOwnerPresent) {
-			chatTranscript = webHandler.getTranscript();
 			UtilityFunctions.playSound();
-			webHandler.sendMessage(ConstantTextStrings.BOT_GOODBYE_OWNER_PRESENT);
-			String newMessages = "";
 			while (!webHandler.hasDisconnected()) {
-				newMessages = webHandler.getTranscript()
-						.replace(chatTranscript, "").trim();
+				newMessages = webHandler.getTranscript().replace(chatTranscript, "").trim();
 				if (newMessages.toLowerCase().contains("restart")) {
 					shouldRestart = true;
 					break;
@@ -91,16 +92,9 @@ public class ValentineBot {
 				Thread.sleep(10000);
 			}
 		} else {
-			webHandler
-					.sendMessage(ConstantTextStrings.BOT_GOODBYE_OWNER_NOT_PRESENT);
-			webHandler.sendMessage(ConstantTextStrings.BOT_TECH_STUFF);
-			webHandler
-					.sendMessage(ConstantTextStrings.BOT_RESTART_INSTRUCTIONS);
-			chatTranscript = webHandler.getTranscript();
 			int cnt = 0;
 			while (true) {
-				String newMessages = webHandler.getTranscript()
-						.replace(chatTranscript, "").trim();
+				newMessages = webHandler.getTranscript().replace(chatTranscript, "").trim();
 				if (newMessages.toLowerCase().contains("restart")) {
 					shouldRestart = true;
 					break;
