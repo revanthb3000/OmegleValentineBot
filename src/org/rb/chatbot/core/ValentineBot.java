@@ -6,6 +6,8 @@ import org.rb.chatbot.preprocessing.ExtractQuotes;
 
 public class ValentineBot {
 
+	public static final int TWITTER_PLUGIN_THRESHOLD = 6;
+	
 	/**
 	 * This is the core function of the project. Starts firefox webdriver, goes
 	 * to the website and initiates a chat. Runs in an infinite loop.
@@ -37,7 +39,7 @@ public class ValentineBot {
 					newMessage = webHandler.getNewMessage();
 
 					if (newMessage.toLowerCase().contains("stop")) {
-						if(numOfQuotes>10){
+						if(numOfQuotes>TWITTER_PLUGIN_THRESHOLD){
 							insertTwitter = true;
 						}
 						Boolean shouldRestart = stopValentineBot(webHandler, isOwnerPresent, insertTwitter);
