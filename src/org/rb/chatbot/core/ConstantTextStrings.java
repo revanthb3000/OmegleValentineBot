@@ -36,7 +36,12 @@ public class ConstantTextStrings {
 	 * The goodbye message when I'm around and spying.
 	 */
 	public static final String BOT_GOODBYE = "Before I leave, I have one thing to ask : Will you be my valentine ? :D\nIf you're already taken (wonder who the lucky person is), I hope it works out for you ! (But I'm still cooler ! :D :D)\n Happy Valentines day !! :) Bye !";
-		
+
+	/**
+	 * The twitter plug in message
+	 */
+	public static final String BOT_TWITTER= "If you'd like, you could follow my owner on twitter @revanthb3000  He came up with this idea !!";
+	
 	/**
 	 * Tells the user how to restart the bot.
 	 */

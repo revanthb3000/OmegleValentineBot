@@ -21,6 +21,7 @@ public class ValentineBot {
 			String fileName = "convs/" + UtilityFunctions.getCurrentTimeStamp() + ".txt";
 			String newMessage = "";
 			int numOfQuotes = 0;
+			Boolean insertTwitter = false;
 			ArrayList<String> quotes = new ArrayList<String>(quotesDataset);
 
 			webHandler.startNewChat(topics);
@@ -28,6 +29,7 @@ public class ValentineBot {
 
 			try {
 				webHandler.sendMessage(ConstantTextStrings.BOT_WELCOME_MESSAGE);
+				insertTwitter = false;
 
 				// This loop is the course of the whole chat.
 				while (true) {
@@ -35,8 +37,10 @@ public class ValentineBot {
 					newMessage = webHandler.getNewMessage();
 
 					if (newMessage.toLowerCase().contains("stop")) {
-						Boolean shouldRestart = stopValentineBot(webHandler,
-								isOwnerPresent);
+						if(numOfQuotes>10){
+							insertTwitter = true;
+						}
+						Boolean shouldRestart = stopValentineBot(webHandler, isOwnerPresent, insertTwitter);
 						if (!shouldRestart) {
 							break;
 						}
@@ -69,16 +73,20 @@ public class ValentineBot {
 	 * 
 	 * @param webHandler
 	 * @param isOwnerPresent
+	 * @param insertTwitter 
 	 * @return
 	 * @throws InterruptedException
 	 */
 	public static Boolean stopValentineBot(WebHandler webHandler,
-			Boolean isOwnerPresent) throws InterruptedException {
+			Boolean isOwnerPresent, Boolean insertTwitter) throws InterruptedException {
 		Boolean shouldRestart = false;
 		String chatTranscript = "", newMessages = "";
 
 		webHandler.sendMessage(ConstantTextStrings.BOT_GOODBYE);
 		webHandler.sendMessage(ConstantTextStrings.BOT_RESTART_INSTRUCTIONS);
+		if(insertTwitter){
+			webHandler.sendMessage(ConstantTextStrings.BOT_TWITTER);
+		}
 		chatTranscript = webHandler.getTranscript();
 
 		if (isOwnerPresent) {
