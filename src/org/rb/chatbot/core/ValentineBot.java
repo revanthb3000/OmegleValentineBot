@@ -93,6 +93,7 @@ public class ValentineBot {
 
 		if (isOwnerPresent) {
 			UtilityFunctions.playSound();
+			webHandler.sendMessage(ConstantTextStrings.BOT_OWNER_SPEAK);
 			while (!webHandler.hasDisconnected()) {
 				newMessages = webHandler.getTranscript().replace(chatTranscript, "").trim();
 				if (newMessages.toLowerCase().contains("restart")) {

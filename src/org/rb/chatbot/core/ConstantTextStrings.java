@@ -25,7 +25,7 @@ public class ConstantTextStrings {
 	/**
 	 * The first thing the bot says once the chat starts.
 	 */
-	public static final String BOT_WELCOME_MESSAGE = "Hi ! I have a confession to make: I'm a bot, not a spam bot, but a valentine bot. I'll be messaging cheesy lines right now :-). I'll hit one quote for each message you send. TO STOP IT, just type \"stop\". Okay ? :D ";
+	public static final String BOT_WELCOME_MESSAGE = "Hi ! I have a confession to make: I'm a bot, not a spam bot, but a love bot. I'll be messaging cheesy lines right now :-). I'll hit one quote for each message you send. TO STOP IT, just type \"stop\". Okay ? :D ";
 	
 	/**
 	 * The message the bot hits when the human doesn't reply for a long time.
@@ -35,8 +35,14 @@ public class ConstantTextStrings {
 	/**
 	 * The goodbye message when I'm around and spying.
 	 */
-	public static final String BOT_GOODBYE = "Before I leave, I have one thing to ask : Will you be my valentine ? :D\nIf you're already taken (wonder who the lucky person is), I hope it works out for you ! (But I'm still cooler ! :D :D)\n Happy Valentines day !! :) Bye !";
+	public static final String BOT_GOODBYE = "Thank you for sticking around ! I hope I brought a smile to your face :D";
+	//public static final String BOT_GOODBYE = "Before I leave, I have one thing to ask : Will you be my valentine ? :D\nIf you're already taken (wonder who the lucky person is), I hope it works out for you ! (But I'm still cooler ! :D :D)\n Happy Valentines day !! :) Bye !";
 
+	/**
+	 * Owner is present and will speak
+	 */
+	public static final String BOT_OWNER_SPEAK = "Anyway, my owner will speak now. Bye :(";
+	
 	/**
 	 * The twitter plug in message
 	 */
