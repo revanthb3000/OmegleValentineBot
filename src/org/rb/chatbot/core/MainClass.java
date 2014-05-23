@@ -20,7 +20,7 @@ public class MainClass {
 	 */
 	public static void main(String[] args) throws Exception {
 		Boolean isOwnerPresent = true;
-		ArrayList<String> topics = new ArrayList<String>(Arrays.asList("love","valentine", "romance", "lovers", "sad", "help"));
+		ArrayList<String> topics = new ArrayList<String>(Arrays.asList("love","valentine", "romance", "lovers"));
 		ValentineBot.startValentineBotChat(isOwnerPresent, topics);
 	}
 }

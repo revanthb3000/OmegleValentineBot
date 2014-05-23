@@ -25,7 +25,7 @@ public class ConstantTextStrings {
 	/**
 	 * The first thing the bot says once the chat starts.
 	 */
-	public static final String BOT_WELCOME_MESSAGE = "Hi ! I have a confession to make: I'm a bot, not a spam bot, but a love bot. I'll be messaging cheesy lines right now :-). I'll hit one quote for each message you send. TO STOP IT, just type \"stop\". Okay ? :D ";
+	public static final String BOT_WELCOME_MESSAGE = "Hi ! I have a confession to make: I'm a bot, not a spam bot, but a love bot. I'll be messaging cheesy lines right now :-). I'll hit one quote for each message you send. TO STOP IT, just type \"stop\" and my owner will speak if he's around. Okay ? :D ";
 	
 	/**
 	 * The message the bot hits when the human doesn't reply for a long time.
@@ -46,7 +46,8 @@ public class ConstantTextStrings {
 	/**
 	 * The twitter plug in message
 	 */
-	public static final String BOT_TWITTER= "If you'd like, you could follow my owner on twitter @revanthb3000  He came up with this idea !!";
+	public static final String BOT_TWITTER= "You could follow my owner on twitter @revanthb3000."
+			+ "\nOr, you could kik me too ! My kik id is rbomeglebot.";
 	
 	/**
 	 * Tells the user how to restart the bot.
