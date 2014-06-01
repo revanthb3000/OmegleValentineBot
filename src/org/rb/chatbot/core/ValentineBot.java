@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import org.rb.chatbot.preprocessing.ExtractQuotes;
 
 public class ValentineBot {
-
-	public static final int CONTACT_INFO_PLUGIN_THRESHOLD = 6;
 	
 	/**
 	 * This is the core function of the project. Starts firefox webdriver, goes
@@ -23,7 +21,6 @@ public class ValentineBot {
 			String fileName = "convs/" + UtilityFunctions.getCurrentTimeStamp() + ".txt";
 			String newMessage = "";
 			int numOfQuotes = 0;
-			Boolean insertContactMeInfo = false;
 			ArrayList<String> quotes = new ArrayList<String>(quotesDataset);
 
 			webHandler.startNewChat(topics);
@@ -31,18 +28,14 @@ public class ValentineBot {
 
 			try {
 				webHandler.sendMessage(ConstantTextStrings.BOT_WELCOME_MESSAGE);
-				insertContactMeInfo = false;
-
+				
 				// This loop is the course of the whole chat.
 				while (true) {
 					webHandler.waitForNewMessage();
 					newMessage = webHandler.getNewMessage();
 
 					if (newMessage.toLowerCase().contains("stop")) {
-						if(numOfQuotes>CONTACT_INFO_PLUGIN_THRESHOLD){
-							insertContactMeInfo = true;
-						}
-						Boolean shouldRestart = stopValentineBot(webHandler, isOwnerPresent, insertContactMeInfo);
+						Boolean shouldRestart = stopValentineBot(webHandler, isOwnerPresent);
 						if (!shouldRestart) {
 							break;
 						}
@@ -79,16 +72,14 @@ public class ValentineBot {
 	 * @return
 	 * @throws InterruptedException
 	 */
-	public static Boolean stopValentineBot(WebHandler webHandler, Boolean isOwnerPresent, Boolean insertContactMeInfo) throws InterruptedException {
+	public static Boolean stopValentineBot(WebHandler webHandler, Boolean isOwnerPresent) throws InterruptedException {
 		Boolean shouldRestart = false;
 		String chatTranscript = "", newMessages = "";
 
 		webHandler.sendMessage(ConstantTextStrings.BOT_GOODBYE);
 		webHandler.sendMessage(ConstantTextStrings.BOT_RESTART_INSTRUCTIONS);
-		if(insertContactMeInfo){
-			webHandler.sendMessage(ConstantTextStrings.BOT_TWITTER);
-			webHandler.sendMessage(ConstantTextStrings.BOT_KIK);
-		}
+		webHandler.sendMessage(ConstantTextStrings.BOT_TWITTER);
+		webHandler.sendMessage(ConstantTextStrings.BOT_KIK);
 		chatTranscript = webHandler.getTranscript();
 
 		if (isOwnerPresent) {
