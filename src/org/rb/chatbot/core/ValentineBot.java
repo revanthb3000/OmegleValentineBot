@@ -79,7 +79,7 @@ public class ValentineBot {
 		webHandler.sendMessage(ConstantTextStrings.BOT_GOODBYE);
 		webHandler.sendMessage(ConstantTextStrings.BOT_RESTART_INSTRUCTIONS);
 		webHandler.sendMessage(ConstantTextStrings.BOT_TWITTER);
-		webHandler.sendMessage(ConstantTextStrings.BOT_KIK);
+		webHandler.sendMessage(ConstantTextStrings.BOT_OTHER_SOCIAL_MEDIA);
 		chatTranscript = webHandler.getTranscript();
 
 		if (isOwnerPresent) {
