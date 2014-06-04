@@ -74,13 +74,7 @@ public class ValentineBot {
 	 */
 	public static Boolean stopValentineBot(WebHandler webHandler, Boolean isOwnerPresent) throws InterruptedException {
 		Boolean shouldRestart = false;
-		String chatTranscript = "", newMessages = "";
-
-		webHandler.sendMessage(ConstantTextStrings.BOT_GOODBYE);
-		webHandler.sendMessage(ConstantTextStrings.BOT_RESTART_INSTRUCTIONS);
-		webHandler.sendMessage(ConstantTextStrings.BOT_TWITTER);
-		webHandler.sendMessage(ConstantTextStrings.BOT_OTHER_SOCIAL_MEDIA);
-		chatTranscript = webHandler.getTranscript();
+		String chatTranscript = "",  newMessages = "";
 
 		if (isOwnerPresent) {
 			UtilityFunctions.playSound();
@@ -94,6 +88,12 @@ public class ValentineBot {
 				Thread.sleep(10000);
 			}
 		} else {
+			webHandler.sendMessage(ConstantTextStrings.BOT_GOODBYE);
+			webHandler.sendMessage(ConstantTextStrings.BOT_RESTART_INSTRUCTIONS);
+			webHandler.sendMessage(ConstantTextStrings.BOT_TWITTER);
+			webHandler.sendMessage(ConstantTextStrings.BOT_OTHER_SOCIAL_MEDIA);
+			chatTranscript = webHandler.getTranscript();
+			
 			int cnt = 0;
 			while (true) {
 				newMessages = webHandler.getTranscript().replace(chatTranscript, "").trim();
