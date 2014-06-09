@@ -101,6 +101,9 @@ public class ValentineBot {
 					shouldRestart = true;
 					break;
 				}
+				if(newMessages.toLowerCase().contains("resetCntYouBOT!")){
+					cnt=0;
+				}
 				cnt += 5000;
 				Thread.sleep(5000);
 				if ((cnt == 240000) || (webHandler.hasDisconnected())) {
